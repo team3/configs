@@ -1,8 +1,0 @@
-[core]
-account = andrey-parkhomenko@idexx.com
-project = gdos-tf913ab9-exp
-
-[compute]
-zone = us-east1-b
-region = us-east1
-
