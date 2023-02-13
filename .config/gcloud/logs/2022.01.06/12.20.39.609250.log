@@ -1,0 +1,62 @@
+2022-01-06 12:20:39,609 DEBUG    root            Loaded Command Group: ['gcloud', 'run']
+2022-01-06 12:20:39,633 DEBUG    root            Loaded Command Group: ['gcloud', 'run', 'deploy']
+2022-01-06 12:20:39,639 DEBUG    root            Running [gcloud.run.deploy] with arguments: [--account: "pre-prod-cd@lims-tools-prod.iam.gserviceaccount.com", --image: "gcr.io/lims-tools-prod/gdos-message-receiver:v86.107", --max-instances: "<googlecloudsdk.command_lib.run.flags._ScaleValue object at 0x104e02970>", --memory: "1G", --no-allow-unauthenticated: "False", --platform: "managed", --project: "gdos-tf913ab9-exp", --region: "us-east4", --set-env-vars: "OrderedDict([('SPRING_PROFILES_ACTIVE', 'exp,cloudrun'), ('NEW_RELIC_ENVIRONMENT', 'exp')])", SERVICE: "gdos-message-receiver"]
+2022-01-06 12:20:39,641 DEBUG    root            (gcloud.run.deploy) Your current active account [pre-prod-cd@lims-tools-prod.iam.gserviceaccount.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT
+Traceback (most recent call last):
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/surface/run/deploy.py", line 232, in Run
+    with serverless_operations.Connect(conn_context) as operations:
+  File "/opt/homebrew/Cellar/python@3.9/3.9.7_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.py", line 97, in Connect
+    op_client = apis.GetClientInstance(conn_context.api_name,
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 275, in GetClientInstance
+    return apis_internal._GetClientInstance(api_name, api_version, no_http, None,
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis_internal.py", line 167, in _GetClientInstance
+    http_client = transports.GetApitoolsTransport(
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transports.py", line 87, in GetApitoolsTransport
+    return http.Http(timeout=timeout,
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/http.py", line 76, in Http
+    http_client = request_wrapper.WrapQuota(
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/http.py", line 125, in WrapQuota
+    quota_project = self.QuotaProject(enable_resource_quota,
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transport.py", line 54, in QuotaProject
+    creds = store.LoadIfEnabled(allow_account_impersonation, use_google_auth)
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 557, in LoadIfEnabled
+    return Load(
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 662, in Load
+    cred = _Load(account, scopes, prevent_refresh, use_google_auth)
+  File "/Users/andrey/Projects/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 759, in _Load
+    raise NoCredentialsForAccountException(account)
+googlecloudsdk.core.credentials.store.NoCredentialsForAccountException: Your current active account [pre-prod-cd@lims-tools-prod.iam.gserviceaccount.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT
+2022-01-06 12:20:39,644 ERROR    root            (gcloud.run.deploy) Your current active account [pre-prod-cd@lims-tools-prod.iam.gserviceaccount.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT
