@@ -1,0 +1,13 @@
+{
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true,
+  "java.jdt.ls.lombokSupport.enabled": true, 
+  "java.jdt.ls.vmargs": "-javaagent:-/usr/local/share/lombok/lombok.jar",
+  "java.jdt.ls.statusIcons": {
+    "busy": "Busy",
+    "ready": "OK",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "coc.preferences.extensionUpdateCheck": "daily",
+}

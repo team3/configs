@@ -33,6 +33,8 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+  use {'neoclide/coc.nvim', branch = 'release'}
+
   use({
     "hrsh7th/nvim-cmp",
     requires = {
@@ -51,7 +53,6 @@ return packer.startup(function(use)
 
   --use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
   --use("lourenci/github-colors")
-  -- Color schemas
   --use("rainglow/vim")
   --use("rakr/vim-one")
   --use("shaunsingh/nord.nvim")
@@ -99,8 +100,8 @@ return packer.startup(function(use)
 
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
-  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use("hrsh7th/nvim-compe") -- for autocompletion
+  --use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  --use("hrsh7th/nvim-compe") -- for autocompletion
   --use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
