@@ -14,15 +14,18 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 -- configure nvim-tree
 nvimtree.setup({
   view = {
-    width = 50
+    adaptive_size = true,
+    float = {
+      enable = true
+    }
   },
   -- change folder arrow icons
   renderer = {
     icons = {
       glyphs = {
         folder = {
-          arrow_closed = "", -- arrow when folder is closed
-          arrow_open = "", -- arrow when folder is open
+          arrow_closed = "^", -- arrow when folder is closed
+          arrow_open = "->", -- arrow when folder is open
         },
       },
     },
@@ -35,9 +38,15 @@ nvimtree.setup({
       window_picker = {
         enable = false,
       },
+      quit_on_open = true
     },
   },
   -- 	git = {
   -- 		ignore = false,
   -- 	},
 })
+
+local keymap = vim.keymap
+
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>s", ":NvimTreeFindFile<CR>")

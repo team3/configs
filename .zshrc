@@ -10,6 +10,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="afowler"
 
+# Aliases
+alias vi="nvim"
+alias vim="nvim"
+alias zshconfig="vim $HOME/.zshrc"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -70,7 +75,7 @@ ZSH_THEME="afowler"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colorize extract macos common-aliases kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +104,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export "JAVA_HOME=$(/usr/libexec/java_home)"
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH"

@@ -1,0 +1,18 @@
+{
+  "java.referencesCodeLens.enabled": true,
+  "java.implementationsCodeLens.enabled": true,
+  "java.jdt.ls.vmargs": "-javaagent:/Users/andreyparkhomenko/.local/share/eclipse/lombok.jar -Xbootclasspath/a:/Users/andreyparkhomenko/.local/share/eclipse/lombok.jar",
+  "java.jdt.ls.statusIcons": {
+    "busy": "Busy",
+    "ready": "OK",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/Users/andreyparkhomenko/Library/Java/JavaVirtualMachines/corretto-17.0.5/Contents/Home"
+    }
+  ]
+}
