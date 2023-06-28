@@ -32,13 +32,11 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
-  use {'neoclide/coc.nvim', branch = 'release'}
-
   use({
     "hrsh7th/nvim-cmp",
     requires = {
       { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lsp-signature-help" },
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
     },
@@ -51,13 +49,9 @@ return packer.startup(function(use)
     },
   })
 
-  --use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-  --use("lourenci/github-colors")
-  --use("rainglow/vim")
-  --use("rakr/vim-one")
-  --use("shaunsingh/nord.nvim")
-  --use("catppuccin/nvim")
-  --use("atelierbram/Base2Tone-nvim")
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-jdtls'
+
   use("rafi/awesome-vim-colorschemes")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -83,25 +77,22 @@ return packer.startup(function(use)
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+  use {'nvim-telescope/telescope-ui-select.nvim' }
 
   -- autocompletion
-  --use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
   -- snippets
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
+  --use("L3MON4D3/LuaSnip") -- snippet engine
+  --use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+  --use("rafamadriz/friendly-snippets") -- useful snippets
 
   -- managing & installing lsp servers, linters & formatters
-  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+  --use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+  --use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
   -- configuring lsp servers
-  use("neovim/nvim-lspconfig") -- easily configure language servers
-  --use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  --use("hrsh7th/nvim-compe") -- for autocompletion
   --use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -128,6 +119,7 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  use("f-person/git-blame.nvim") -- git blame
 
   -- status-line/winbar
   use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
@@ -140,6 +132,7 @@ return packer.startup(function(use)
   })
 
   use("dstein64/nvim-scrollview")
+  use("folke/trouble.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

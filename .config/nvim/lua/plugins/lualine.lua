@@ -4,6 +4,11 @@ if not status then
   return
 end
 
+local function projectname()
+    home = os.getenv('HOME') .. "/"
+    return "[" .. string.gsub(string.gsub(vim.fn.getcwd(), home, ''), 'Projects/', '') .. "]"
+end
+
 -- configure lualine with modified theme
 lualine.setup {
   options = {
@@ -27,8 +32,8 @@ lualine.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = {projectname, 'filename'},
+    lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
